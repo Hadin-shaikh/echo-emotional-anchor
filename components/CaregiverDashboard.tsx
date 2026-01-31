@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { COLORS } from '../constants';
 import { VisualReminder } from '../types';
-import { parseTaskFromText } from '../services/geminiService';
+import { parseTaskFromText } from "../services/services/localService";
+import { selectImageForReminder } from "../services/services/imageSelector";
 
 interface CaregiverDashboardProps {
   reminders: VisualReminder[];
@@ -31,7 +32,8 @@ const CaregiverDashboard: React.FC<CaregiverDashboardProps> = ({
       const newReminder: VisualReminder = {
         id: Math.random().toString(),
         ...parsed,
-        imageUrl: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&q=80&w=400",
+        imageUrl: selectImageForReminder(parsed.type),
+
         completed: false
       };
       onAddReminder(newReminder);

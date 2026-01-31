@@ -3,7 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { MOCK_GROUNDING_VIDEOS, COLORS } from '../constants';
 import { VisualReminder, TimeOfDay } from '../types';
 import GroundingButton from './GroundingButton';
-import { generateMorningBriefing } from '../services/geminiService';
+// OLD
+// import { generateMorningBriefing } from "../services/geminiService";
+
+// NEW
+import { generateMorningBriefing } from "../services/services/localService";
+
+
 
 interface SeniorAppProps {
   reminders: VisualReminder[];
