@@ -1,0 +1,8 @@
+{
+  "name": "ECHO - Emotional Anchor for Dementia Care",
+  "description": "A specialized platform for dementia patients and caregivers featuring a 'Grounding Button', visual memory aids, and AI-powered morning briefings to reduce anxiety and maintain dignity.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
